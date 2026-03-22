@@ -3,15 +3,10 @@ import Layout from './components/Layout';
 import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
 import ProwessSection from './sections/ProwessSection';
+import ProjectSection from './sections/ProjectSection';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Placeholders for remaining sections
-const ProjectSection = () => (
-  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full flex flex-col items-center justify-center">
-    <h2 className="text-4xl font-bold glow-text-red">PROJECT INVENTORY</h2>
-    <p className="text-white/40 mt-4 tracking-widest uppercase italic">Scanning Archives: Tatooine - Mos Eisley</p>
-  </motion.div>
-);
 
 const ExperienceSection = () => (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full flex flex-col items-center justify-center">
