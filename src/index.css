@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-accent-red: #ff003c;
+  --color-accent-blue: #00e0ff;
+  --color-accent-gold: #ffe81f;
+  
+  --animate-scan-line: scan-line 4s linear infinite;
+  
+  --glow-red: 0 0 20px rgba(255, 0, 60, 0.6);
+  --glow-blue: 0 0 20px rgba(0, 224, 255, 0.6);
+  --glow-gold: 0 0 15px rgba(255, 232, 31, 1);
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base UI Positioning Helper */
+.fixed-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Holographic UI Elements */
+.holographic-panel {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+  position: relative;
+}
+
+.glow-text-red {
+  color: var(--color-accent-red);
+  text-shadow: var(--glow-red);
+}
+
+.glow-text-blue {
+  color: var(--color-accent-blue);
+  text-shadow: var(--glow-blue);
+}
+
+.glow-text-gold {
+  color: var(--color-accent-gold);
+  text-shadow: var(--glow-gold);
+}
+
+/* Star Wars Crawl Styles */
+.crawl-content {
+  color: var(--color-accent-gold);
+  line-height: 1.6;
+  text-align: justify;
+  transform-origin: 50% 100%;
+}
+
+.crawl-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2em;
+}
+
+/* Section Navigation Elements */
+.nav-pill {
+  @apply px-6 py-3 rounded-full bg-white/5 border border-white/5 transition-all duration-300 text-white/40 text-[10px] tracking-[0.2em] font-bold;
+}
+
+.nav-pill:hover, .nav-pill.active {
+  @apply bg-accent-red/10 border-accent-red text-accent-red;
+  text-shadow: var(--glow-red);
+}
+
+/* Decorative Scanlines */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.02),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 3px, 3px 100%;
+  opacity: 0.15;
+}
+
+.shadow-glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-red);
+}
+
+.bg-radial-gradient-fade {
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+}
