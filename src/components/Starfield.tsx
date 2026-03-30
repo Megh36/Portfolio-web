@@ -5,7 +5,7 @@ import * as THREE from 'three';
 
 const StarParticles = () => {
   const ref = useRef<THREE.Points>(null!);
-  
+
   // Generate a sphere-like distribution of 5,000 points
   const points = useMemo(() => {
     const p = new Float32Array(5000 * 3);
@@ -48,9 +48,9 @@ const Hyperspace = () => {
   const points = useMemo(() => {
     const p = new Float32Array(500 * 3);
     for (let i = 0; i < 500; i++) {
-        p[i * 3] = (Math.random() - 0.5) * 50;
-        p[i * 3 + 1] = (Math.random() - 0.5) * 50;
-        p[i * 3 + 2] = Math.random() * 1000;
+      p[i * 3] = (Math.random() - 0.5) * 50;
+      p[i * 3 + 1] = (Math.random() - 0.5) * 50;
+      p[i * 3 + 2] = Math.random() * 1000;
     }
     return p;
   }, []);
@@ -58,7 +58,7 @@ const Hyperspace = () => {
   useFrame((state, delta) => {
     if (ref.current) {
       // Logic for hyperspace movement if needed, currently static or simple drift
-      ref.current.position.z += delta * 50; 
+      ref.current.position.z += delta * 300;
       if (ref.current.position.z > 500) ref.current.position.z = -500;
     }
   });
@@ -68,7 +68,7 @@ const Hyperspace = () => {
       <PointMaterial
         transparent
         color="#00e0ff"
-        size={0.1}
+        size={0.05}
         sizeAttenuation={true}
         depthWrite={false}
       />
@@ -79,9 +79,9 @@ const Hyperspace = () => {
 const Starfield: React.FC = () => {
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, background: '#000' }}>
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas camera={{ position: [0, 0, 50] }}>
         <StarParticles />
-        {/* <Hyperspace /> Could be toggled for transitions */}
+        <Hyperspace />
       </Canvas>
     </div>
   );
