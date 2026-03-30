@@ -87,7 +87,7 @@ html, body, #root {
 
 /* Section Navigation Elements */
 .nav-pill {
-  @apply px-6 py-3 rounded-full bg-white/5 border border-white/5 transition-all duration-300 text-white/40 text-[10px] tracking-[0.2em] font-bold;
+  @apply px-6 py-3 rounded-full bg-white/5 border border-white/5 transition-all duration-300 text-white/40 text-sm tracking-[0.2em] font-bold;
 }
 
 .nav-pill:hover, .nav-pill.active {

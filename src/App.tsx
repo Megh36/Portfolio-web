@@ -4,23 +4,13 @@ import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
 import ProwessSection from './sections/ProwessSection';
 import ProjectSection from './sections/ProjectSection';
+import ExperienceSection from './sections/ExperienceSection';
+import AchievementsSection from './sections/AchievementsSection';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Placeholders for remaining sections
 
-const ExperienceSection = () => (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full flex flex-col items-center justify-center">
-    <h2 className="text-4xl font-bold glow-text-red text-center">EXPERIENCE DATA</h2>
-    <p className="text-white/40 mt-4 tracking-widest uppercase italic">Galactic Senate Records: Coruscant</p>
-  </motion.div>
-);
-
-const AchievementsSection = () => (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full flex flex-col items-center justify-center">
-    <h2 className="text-4xl font-bold glow-text-red">ACHIEVEMENTS</h2>
-    <p className="text-white/40 mt-4 tracking-widest uppercase italic">Imperial Library Archives: Scarif</p>
-  </motion.div>
-);
+// Placeholders for remaining sections
 
 const OtherWorksSection = () => (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full h-full flex flex-col items-center justify-center">
